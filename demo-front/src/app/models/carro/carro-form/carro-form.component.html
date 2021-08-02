@@ -1,0 +1,73 @@
+<h3 class="page-title">Dados prinicipais do Carro</h3>
+<form [formGroup]="carroForm" (submit)="onSave()">
+  <div class="panel panel-default">
+    <div class="panel-body">
+
+      <div class="row">
+        <div class="col-md-6 col-lg-3">
+          <app-field label="Nome" required="true">
+            <input type="text" class="form-control" formControlName="nome">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <app-field label="Km por Galão" required="true">
+            <input type="text" class="form-control" formControlName="kmPorGalao">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <app-field label="Cilindros" required="true">
+            <input type="text" class="form-control" formControlName="cilindros">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <app-field label="Cavalo de Força" required="true">
+            <input type="text" class="form-control" formControlName="cavaloDeForca">
+          </app-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-4">
+          <app-field label="Peso" required="true">
+            <input type="text" class="form-control" formControlName="peso">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <app-field label="Aceleração" required="true">
+            <input type="text" class="form-control" formControlName="aceleracao">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <app-field label="Ano" required="true">
+            <input type="text" class="form-control" formControlName="ano">
+          </app-field>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <app-field label="Origem" required="true">
+            <input type="text" class="form-control" formControlName="origem">
+          </app-field>
+        </div>
+      </div>
+
+    </div>
+    <div class="panel-footer">
+      <button class="btn btn-primary mr-1" [routerLink]="['/carro/editar', carro.id]" *ngIf="carroForm.disabled">
+        <i class="fa fa-edit"></i> Editar
+      </button>
+
+      <button class="btn btn-success mr-1" *ngIf="!carroForm.disabled">
+        <i class="fa fa-paper-plane"></i> Salvar
+      </button>
+
+      <button class="btn btn-light" routerLink="/carro">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</form>
